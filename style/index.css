@@ -26,7 +26,6 @@ nav {
     display: flex;
     justify-content: center;
     padding: 2em 0 2em 0;
-
 }
 nav ul {
     width: 500px;
@@ -59,23 +58,28 @@ nav a:hover {
 }
 
 .main-section-home div {
-    padding: 4em 8em;
+    padding: 6em 0;
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 93, 74, 104, 0.37 );
     backdrop-filter: blur( 3px ); 
     border-radius: 10px;
+    width: 600px;
+    max-width: 90%;
 }
 
-.main-section-home h1, 
-.main-section-home h2,
+.main-section-home h1,
 .main-section-projects h2,
 .main-section-projects p {
     margin-bottom: 0.5em;
 }
 
+.main-section-home h2 {
+    margin-bottom: 2em;
+}
+
 /* BUTTONS FOR ALL PAGES */
-.main-section-home button,
-.main-section-about button,
+.main-section-home .main-section-home-button,
+.main-section-about .about-me-button,
 .main-section-projects button {
     padding: 1em 2em;
     border-radius: 5px;
@@ -85,10 +89,11 @@ nav a:hover {
     font-family: inherit;
     color: #ffffff;
     font-weight: 700;
+    text-decoration: none;
 }
 
-.main-section-home button:hover,
-.main-section-about button:hover,
+.main-section-home .main-section-home-button:hover,
+.main-section-about .about-me-button:hover,
 .main-section-projects button:hover,
 .contact-form button:hover {
     background-color: #fdb136; 
@@ -103,30 +108,27 @@ footer {
 }
 
 footer p {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
-footer button {
+footer .button {
     padding: 1em 2em;
     border-radius: 5px;
     cursor: pointer;
-    border: none;
     background-color: #5d4a68;
     font-family: inherit;
     color: #ffffff;
     font-weight: 700;
+    text-decoration: none;
+    
 }
 
-footer button:hover {
+footer .button:hover {
     background-color: #7d668a;
 }
 
 /* ABOUT ME PAGE */
 /* MAIN SECTION ABOUT ME */
-.main-section-about img {
-    width: 40%;
-    object-fit: cover;
-}
 .main-section-about {
     width: 1000px;
     max-width: 90%;
@@ -135,13 +137,21 @@ footer button:hover {
     padding: 3em 0;
 }
 
-.main-section-about div {
-    padding: 3em;
+.main-section-about img {
+    width: 40%;
+    object-fit: cover;
 }
 
-.main-section-about p,
+.main-section-about div {
+    padding: 3em;
+    width: 60%;
+}
+
 .main-section-about h1 {
     margin-bottom: 1em;
+}
+.main-section-about p {
+    margin-bottom: 2em;;
 }
 
 .sub-section-about {
@@ -249,4 +259,57 @@ footer button:hover {
     border: none;
     color: #ffffff;
     font-weight: 700;
+}
+
+
+/* MEDIA QUERIES  */
+/* TABLET GOING DOWN */
+@media (max-width: 800px) {
+    .main-section-home div {
+        padding: 5em 0;
+    }
+    .main-section-about {
+        flex-direction: column;
+    }
+    .main-section-about img {
+        width:  100%;
+    }
+    .main-section-about div {
+        padding: 1em;
+        width: 100%;
+    }
+    .sub-section-about div {
+        padding: 2em 1em;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        margin: 1em 0;
+    }  
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+    .main-section-home {
+        min-height: 80vh;
+    }
+    .main-section-home div {
+        padding: 4em 0;
+    }
+    nav {
+        padding: 1em;
+    }
+    nav ul {
+        height: 20vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-section-contact {
+        text-align: center;
+    }
+    .main-section-home .main-section-home-button,
+    .main-section-about .about-me-button,
+    footer .button {
+        padding: 0.5em 1em;
+    }
 }
